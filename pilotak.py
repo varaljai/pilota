@@ -28,15 +28,16 @@ for sor in l:
 print(f"6. feladat: {nemzet}")
 
 #7. feladat
-stat = dict()
-for sor in rajtszam:
-    rajtszam = (sor[-1])
-    stat[rajtszam] = stat.get(rajtszam, 0) + 1
+stats = dict()
+for sor in l:
+    rajtszam = sor[-1]
+    stats[rajtszam] = stats.get(rajtszam, 0) + 1
     
-szamok = []
-for sor in stat.items():
-        if sor[1] > 1:
-            szamok.append(sor)
+szamok = [sor for sor in stats.items() if sor[1] > 1 ]
+szamok.remove(szamok[0])
+rajtszamok = [sor[0] for sor in szamok]
+
+print(f"7. feladat: {rajtszamok[0]},{rajtszamok[1]},{rajtszamok[2]},{rajtszamok[3]}")
     
     
     
